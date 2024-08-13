@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomerFormController">
+   <children>
+      <JFXTextField fx:id="txtId" layoutX="43.0" layoutY="74.0" promptText="Id" />
+      <JFXTextField fx:id="txtName" layoutX="110.0" layoutY="174.0" promptText="name" />
+      <JFXTextField fx:id="txtAddress" layoutX="110.0" layoutY="293.0" promptText="address" />
+      <JFXTextField fx:id="txtDob" layoutX="110.0" layoutY="257.0" promptText="Id" text="dob" />
+      <JFXTextField fx:id="txtTitle" layoutX="110.0" layoutY="220.0" promptText="Id" text="title" />
+      <JFXButton layoutX="227.0" layoutY="87.0" onAction="#btnSearchCustomerOnAction" style="-fx-background-color: #4cd137;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="291.0" layoutY="351.0" onAction="#btnUpdateCustomerOnAction" style="-fx-background-color: #4cd137;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
