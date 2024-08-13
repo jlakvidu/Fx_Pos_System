@@ -9,5 +9,6 @@
       <JFXButton layoutX="135.0" layoutY="208.0" onAction="#btnViewCustomerFormOnAction" text="View Customer" />
       <JFXButton layoutX="135.0" layoutY="260.0" onAction="#btnSearchCustomerFormOnAction" text="Search Customer" />
       <JFXButton layoutX="135.0" layoutY="302.0" onAction="#btnUpdateCustomerFormOnAction" text="Update Customer" />
+      <JFXButton layoutX="143.0" layoutY="343.0" onAction="#btnDeleteCustomerFormOnAction" text="Delete Customer" />
    </children>
 </AnchorPane>

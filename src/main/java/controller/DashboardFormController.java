@@ -15,10 +15,10 @@ public class DashboardFormController {
         Stage stage = new Stage();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/add_customer_form.fxml"))));
-            stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        stage.show();
     }
 
     @FXML
@@ -46,6 +46,16 @@ public class DashboardFormController {
         Stage stage = new Stage();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/update_customer_form.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    public void btnDeleteCustomerFormOnAction(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/delete_customer_form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

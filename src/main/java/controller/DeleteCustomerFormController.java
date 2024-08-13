@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import model.Customer;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
-public class UpdateCustomerFormController {
+public class DeleteCustomerFormController {
 
     @FXML
     private JFXTextField txtAddress;
@@ -26,6 +23,7 @@ public class UpdateCustomerFormController {
 
     @FXML
     private JFXTextField txtTitle;
+
 
     @FXML
     void btnSearchCustomerOnAction(ActionEvent event) {
@@ -43,22 +41,13 @@ public class UpdateCustomerFormController {
     }
 
     @FXML
-    void btnUpdateCustomerOnAction(ActionEvent event) {
-        String customerId = txtId.getText();
+    void btnDeleteCustomerOnAction(ActionEvent event) {
         ObservableList<Customer> customerArrayList = DBConnection.getInstance().getCustomerArrayList();
-
         for (int i = 0; i < customerArrayList.size(); i++) {
             Customer customer = customerArrayList.get(i);
-
             if (customer.getId().equals(customer.getId())) {
-                customer.setName(txtName.getText());
-                customer.setAddress(txtAddress.getText());
-                    customer.setDob(LocalDate.parse(txtDob.getText()));
-                customer.setTitle(txtTitle.getText());
-
-                customerArrayList.set(i, customer);
-
-                System.out.println("Customer updated successfully.");
+                customerArrayList.remove(i);
+                System.out.println("Customer deleted successfully.");
                 return;
             }
         }
