@@ -53,7 +53,7 @@ public class DeleteCustomerFormController {
             if (txtId.getText().equals(customer.getId())) {
                 customerArrayList.remove(i);
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setContentText("Error: Customer deleted successfully. ");
+                alert.setContentText(" Customer deleted successfully. ");
                 alert.show();
                 cleartxt();
                 return;

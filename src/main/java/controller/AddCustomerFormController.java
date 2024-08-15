@@ -48,8 +48,11 @@ AddCustomerFormController implements Initializable {
     @FXML
     private JFXTextField txtName;
 
+    int index=1;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        generateId();
         ObservableList<String> title = FXCollections.observableArrayList();
         title.add("Mr.");
         title.add("Miss.");
@@ -63,6 +66,7 @@ AddCustomerFormController implements Initializable {
         customerArrayList.add(customer);
         onSubmit();
         cleartxt();
+        generateId();
 
     }
 
@@ -85,5 +89,16 @@ AddCustomerFormController implements Initializable {
        txtContactNumber.setText(null);
        dateDOB.setValue(null);
        comTitle.getSelectionModel().clearSelection();
+    }
+
+    public void generateId() {
+        ObservableList<Customer> customerArrayList = DBConnection.getInstance().getCustomerArrayList();
+        if (customerArrayList.isEmpty()) {
+            txtId.setText("C001");
+        } else {
+            String lastId = customerArrayList.get(customerArrayList.size() - 1).getId();
+            int newId = Integer.parseInt(lastId.substring(1)) + 1;
+            txtId.setText(String.format("C%03d", newId));
+        }
     }
 }

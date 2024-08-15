@@ -81,7 +81,7 @@ public class UpdateCustomerFormController {
 
                 customerArrayList.set(i, customer);
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Error: Customer Updated Sussessfully.");
+                alert.setContentText(" Customer Updated Sussessfully.");
                 alert.show();
                 cleartxt();
                 return;
