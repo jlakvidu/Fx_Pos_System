@@ -33,7 +33,10 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <JFXTextField fx:id="txtId" layoutX="175.0" layoutY="122.0" promptText="Id" />
+      <JFXTextField fx:id="txtId" layoutX="169.0" layoutY="114.0" prefHeight="30.0" prefWidth="135.0" promptText="Id">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXTextField>
       <JFXTextField fx:id="txtName" layoutX="172.0" layoutY="240.0" promptText="name" />
       <JFXTextField fx:id="txtAddress" layoutX="171.0" layoutY="286.0" promptText="address" />
       <ComboBox fx:id="comTitle" layoutX="168.0" layoutY="186.0" prefWidth="150.0" promptText="title" />
@@ -63,6 +66,11 @@
          </textFill>
          <font>
             <Font name="Broadway" size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="114.0" text="Id -" textFill="#e5ff00">
+         <font>
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
    </children>
