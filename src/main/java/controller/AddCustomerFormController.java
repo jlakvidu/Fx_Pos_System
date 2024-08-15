@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import model.Customer;
@@ -16,8 +17,20 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.ResourceBundle;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.control.DatePicker;
+import java.time.LocalDate;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.control.DatePicker;
+import java.time.LocalDate;
 
-public class AddCustomerFormController implements Initializable {
+
+public class
+AddCustomerFormController implements Initializable {
 
     public JFXTextField txtContactNumber;
     @FXML
@@ -48,8 +61,21 @@ public class AddCustomerFormController implements Initializable {
         Customer customer = new Customer(txtId.getText(),comTitle.getValue(),txtName.getText(), txtAddress.getText(),dateDOB.getValue(),txtContactNumber.getText());
         ObservableList<Customer> customerArrayList = DBConnection.getInstance().getCustomerArrayList();
         customerArrayList.add(customer);
-        System.out.println(customerArrayList);
+        onSubmit();
         cleartxt();
+
+    }
+
+    private void onSubmit() {
+        if (txtId.getText().isEmpty() || comTitle.getValue() == null || txtName.getText().isEmpty() || txtAddress.getText().isEmpty() || dateDOB.getValue() == null || txtContactNumber.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Error: Please fill in all required fields.");
+            alert.show();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Customer Added Successfully.");
+            alert.show();
+        }
     }
 
     public void cleartxt(){

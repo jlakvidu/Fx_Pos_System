@@ -2,26 +2,89 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeleteCustomerFormController">
+<AnchorPane prefHeight="497.0" prefWidth="488.0" style="-fx-background-color: #7efff5;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeleteCustomerFormController">
    <children>
-      <JFXTextField fx:id="txtId" layoutX="53.0" layoutY="84.0" promptText="Id" />
-      <JFXTextField fx:id="txtName" layoutX="120.0" layoutY="184.0" promptText="name" />
-      <JFXTextField fx:id="txtAddress" layoutX="120.0" layoutY="303.0" promptText="address" />
-      <JFXTextField fx:id="txtDob" layoutX="120.0" layoutY="267.0" promptText="Id" text="dob" />
-      <JFXTextField fx:id="txtTitle" layoutX="120.0" layoutY="230.0" promptText="Id" text="title" />
-      <JFXButton layoutX="237.0" layoutY="97.0" onAction="#btnSearchCustomerOnAction" style="-fx-background-color: #4cd137;" text="Search" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="55.0" layoutX="81.0" layoutY="82.0" stroke="#7ea7ff" strokeLineCap="BUTT" strokeType="OUTSIDE" width="327.0">
+         <fill>
+            <LinearGradient endX="0.5000000072248054" endY="0.5795454468690988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.5666666626930237" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9426900744438171" green="0.9716958999633789" blue="0.9789473414421082" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="282.0" layoutX="81.0" layoutY="163.0" stroke="#7ea7ff" strokeLineCap="BUTT" strokeType="OUTSIDE" width="325.0">
+         <fill>
+            <LinearGradient endX="0.5000000072248054" endY="0.5795454468690988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.5666666626930237" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9426900744438171" green="0.9716958999633789" blue="0.9789473414421082" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXTextField fx:id="txtId" layoutX="102.0" layoutY="84.0" promptText="Id" />
+      <JFXTextField fx:id="txtName" layoutX="160.0" layoutY="197.0" promptText="name" />
+      <JFXTextField fx:id="txtAddress" layoutX="159.0" layoutY="318.0" promptText="address" />
+      <JFXTextField fx:id="txtDob" layoutX="161.0" layoutY="278.0" promptText="Id" text="dob" />
+      <JFXTextField fx:id="txtTitle" layoutX="161.0" layoutY="238.0" promptText="Id" text="title" />
+      <JFXButton layoutX="294.0" layoutY="97.0" onAction="#btnSearchCustomerOnAction" style="-fx-background-color: #4cd#EE5A24137;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="375.0" layoutY="337.0" onAction="#btnDeleteCustomerOnAction" style="-fx-background-color: #4cd137;" text="Delete" textFill="WHITE">
+      <JFXButton layoutX="356.0" layoutY="457.0" onAction="#btnDeleteCustomerOnAction" style="-fx-background-color: #4cd137;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtContactNumber" layoutX="101.0" layoutY="350.0" promptText="contact number" />
+      <JFXTextField fx:id="txtContactNumber" layoutX="159.0" layoutY="356.0" promptText="contact number" />
+      <Label layoutX="62.0" layoutY="14.0" text="Delete Customer">
+         <textFill>
+            <RadialGradient centerX="0.5530973788911262" centerY="0.4507576046567975" radius="0.43577983401237275">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.10999999940395355" green="0.18341369926929474" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="Broadway" size="41.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

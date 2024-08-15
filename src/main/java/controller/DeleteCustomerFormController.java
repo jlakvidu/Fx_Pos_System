@@ -5,6 +5,7 @@ import db.DBConnection;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import model.Customer;
 
 public class DeleteCustomerFormController {
@@ -39,7 +40,9 @@ public class DeleteCustomerFormController {
                 return;
             }
         }
-        System.out.println("Customer not found.");
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setContentText("Error: This customer is does not exit.");
+        alert.show();
     }
 
     @FXML
@@ -49,10 +52,23 @@ public class DeleteCustomerFormController {
             Customer customer = customerArrayList.get(i);
             if (txtId.getText().equals(customer.getId())) {
                 customerArrayList.remove(i);
-                System.out.println("Customer deleted successfully.");
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setContentText("Error: Customer deleted successfully. ");
+                alert.show();
+                cleartxt();
                 return;
             }
         }
-        System.out.println("Customer not found.");
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setContentText("Error: This customer is does not exit.");
+        alert.show();
+    }
+    public void cleartxt(){
+        txtId.setText(null);
+        txtName.setText(null);
+        txtAddress.setText(null);
+        txtContactNumber.setText(null);
+        txtDob.setText(null);
+        txtTitle.setText(null);
     }
 }

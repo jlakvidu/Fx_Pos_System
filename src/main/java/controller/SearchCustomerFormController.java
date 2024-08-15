@@ -5,6 +5,7 @@ import db.DBConnection;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import model.Customer;
 
 public class SearchCustomerFormController {
@@ -37,7 +38,9 @@ public class SearchCustomerFormController {
                 return;
             }
         }
-        System.out.println("Customer not found.");
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setContentText("Error: This customer is does not exit.");
+        alert.show();
     }
 
 }
