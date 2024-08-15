@@ -7,8 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import model.Customer;
 
-import java.util.ArrayList;
-
 public class SearchCustomerFormController {
 
     int index =0;

@@ -20,12 +20,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ViewCustomerFormController {
 
-    public JFXTextField txtId;
-    public JFXTextField txtName;
-    public JFXTextField txtAddress;
-    public JFXTextField txtDob;
-    public JFXTextField txtTitle;
-    int index = 0;
+    @FXML
+    public TableColumn colContactNumber;
 
     @FXML
     private TableColumn<?, ?> colAddress;
@@ -48,6 +44,7 @@ public class ViewCustomerFormController {
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colDateOfBirth.setCellValueFactory(new PropertyValueFactory<>("dob"));
+        colContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
         tblCustomer.setItems(DBConnection.getInstance().getCustomerArrayList());
     }
 

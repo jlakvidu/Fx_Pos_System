@@ -9,6 +9,7 @@ import model.Customer;
 
 public class DeleteCustomerFormController {
 
+    public JFXTextField txtContactNumber;
     @FXML
     private JFXTextField txtAddress;
 
@@ -34,6 +35,7 @@ public class DeleteCustomerFormController {
                 txtAddress.setText(customer.getAddress());
                 txtDob.setText(String.valueOf(customer.getDob()));
                 txtTitle.setText(customer.getTitle());
+                txtContactNumber.setText(customer.getContactNumber());
                 return;
             }
         }
@@ -45,7 +47,7 @@ public class DeleteCustomerFormController {
         ObservableList<Customer> customerArrayList = DBConnection.getInstance().getCustomerArrayList();
         for (int i = 0; i < customerArrayList.size(); i++) {
             Customer customer = customerArrayList.get(i);
-            if (customer.getId().equals(customer.getId())) {
+            if (txtId.getText().equals(customer.getId())) {
                 customerArrayList.remove(i);
                 System.out.println("Customer deleted successfully.");
                 return;

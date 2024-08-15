@@ -8,13 +8,15 @@ public class Customer {
     private String address;
     private LocalDate dob;
     private  String title;
+    private String contactNumber;
 
-    public Customer(String id,  String title, String name, String address, LocalDate dob) {
+    public Customer(String id,  String title, String name, String address, LocalDate dob,String contactNumber) {
         this.id = id;
         this.title=title;
         this.name = title+name;
         this.address = address;
         this.dob = dob;
+        this.contactNumber = contactNumber;
     }
 
     public Customer() {
@@ -58,6 +60,14 @@ public class Customer {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
     @Override

@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 
 public class AddCustomerFormController implements Initializable {
 
+    public JFXTextField txtContactNumber;
     @FXML
     private ComboBox<String> comTitle;
 
@@ -44,14 +45,19 @@ public class AddCustomerFormController implements Initializable {
     }
 
     public void btnAddCustomerOnAction(ActionEvent actionEvent) {
-        String id = txtId.getText();
-        String title = comTitle.getValue();
-        String name = txtName.getText();
-        String address = txtAddress.getText();
-        LocalDate dob = dateDOB.getValue();
-        Customer customer = new Customer(id,title,name,address,dob);
+        Customer customer = new Customer(txtId.getText(),comTitle.getValue(),txtName.getText(), txtAddress.getText(),dateDOB.getValue(),txtContactNumber.getText());
         ObservableList<Customer> customerArrayList = DBConnection.getInstance().getCustomerArrayList();
         customerArrayList.add(customer);
         System.out.println(customerArrayList);
+        cleartxt();
+    }
+
+    public void cleartxt(){
+       txtId.setText(null);
+       txtName.setText(null);
+       txtAddress.setText(null);
+       txtContactNumber.setText(null);
+       dateDOB.setValue(null);
+       comTitle.getSelectionModel().clearSelection();
     }
 }

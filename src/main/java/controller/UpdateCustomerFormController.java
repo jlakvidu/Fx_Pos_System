@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class UpdateCustomerFormController {
 
+    public JFXTextField txtContactNumber;
     @FXML
     private JFXTextField txtAddress;
 
@@ -36,6 +37,7 @@ public class UpdateCustomerFormController {
                 txtAddress.setText(customer.getAddress());
                 txtDob.setText(String.valueOf(customer.getDob()));
                 txtTitle.setText(customer.getTitle());
+                txtContactNumber.setText(customer.getContactNumber());
                 return;
             }
         }
@@ -50,11 +52,12 @@ public class UpdateCustomerFormController {
         for (int i = 0; i < customerArrayList.size(); i++) {
             Customer customer = customerArrayList.get(i);
 
-            if (customer.getId().equals(customer.getId())) {
+            if (txtId.getText().equals(customer.getId())) {
                 customer.setName(txtName.getText());
                 customer.setAddress(txtAddress.getText());
-                    customer.setDob(LocalDate.parse(txtDob.getText()));
+                customer.setDob(LocalDate.parse(txtDob.getText()));
                 customer.setTitle(txtTitle.getText());
+                customer.setContactNumber(txtContactNumber.getText());
 
                 customerArrayList.set(i, customer);
 
